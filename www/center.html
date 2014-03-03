@@ -1,0 +1,140 @@
+<article id="main" class="tabtab blue flex">
+
+    <nav>
+
+    <ul>
+    <li><a href="#tab1">Arrivals / Check In</a></li>
+    <li><a href="#tab2">In House / Check Out</a></li>
+    <li><a href="#tab3" onClick="create_chart3();">Check In Report</a></li>
+    <li><a href="#tab4">Configuration</a></li>
+    </ul>
+
+    </nav>
+
+
+<section id="tab1">
+
+<h1>Arrivals</h1>
+
+<!--
+<table id="arrivals" class="grilla" border=0 cellspacing=0 cellpadding=0>
+-->
+<table class="grilla" id="arrivals">
+<thead>
+ <tr>
+  <td>LAST  </td> <td>FIRST</td><td>ARRIVAL</td><td>DEPART</td><td>ADULT</td><td>CHILD</td><td>ROOM TYPE </td><td>ROOM</td><td>PREFERENCES</td>
+ </tr>
+ </thead>
+ <tbody>
+ </tbody>
+</table>
+
+</section>
+
+
+<section id="tab2">
+
+<h1>In House Guests</h1>
+
+<table class=grilla border=0 cellspacing=0 cellpadding=0>
+<thead>
+<tr  valign=top>
+<td>LAST    </td><td>FIRST</td><td>ARRIVAL</td><td>DEPART</td><td>ADULT</td><td>CHILD</td><td>ROOM TYPE</td><td>ROOM</td><td>BALANCE</td><td>STATUS</td>
+</thead>
+<tbody>
+<tr><td>DaVinci </td><td>Leonardo</td><td>20-sep</td><td>29-Sep</td><td>1</td><td>0</td><td>BASIC</td><td>1120</td><td>$2300</td><td>DUE OUT</td></tr>
+<tr><td>Iglesias</td><td>Sebastian  </td><td>27-Sep </td><td>01-Oct </td><td>1  </td><td>0  </td><td>VILLA  </td><td>1122   </td><td>$900   </td><td>CHECKED IN </td></tr>
+<tr><td>Wayne   </td><td>Bruce  </td><td>18-Sep </td><td>29-Sep </td><td>2  </td><td>0  </td><td>BASIC  </td><td>2213   </td><td>$5400  </td><td>DUE OUT</td></tr>
+<tr><td>Sawyer  </td><td>Tom    </td><td>30-Sep </td><td>10-Oct </td><td>1  </td><td>0  </td><td>VILLA  </td><td>2018   </td><td>$600   </td><td>CHECKED IN</td></tr>
+</tbody>
+</table>
+</section>
+
+
+<section id="tab3">
+
+    <h1>Check In Report</h1>
+
+    <div id="chart3" class="chart_full"></div>
+
+</section>
+
+
+<section id="tab4">
+
+<h1>Configuration</h1>
+
+<div style="width:500px;text-align: right">
+<button onclick="this.innerText='Hello World!';">Obligatory</button>
+</div>
+
+<aside>
+<p>LiteScript Language Demo
+<p>(C) 2014 Lucio M. Tato
+<p><a href=http://github.com/luciotato/LiteScript>github.com/luciotato/LiteScript</a>
+<p><a href=http://github.com/luciotato/reception-LiteScript-demo>github.com/luciotato/reception-LiteScript-demo</a>
+</aside>
+
+</section>
+
+</article>
+
+    <div  id="obscure-background" class="obscure-background hidden">
+    <div  id="popup" class="roundbox popup hidden">
+
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+            <form id=reservation class="hidden">
+
+                <h1>Reservation</h1>
+
+                    <table id="names" class="form-box">
+                        <tr><td><label for=lastName>Last Name:</label></td><td><input id="lastName" class=name></td></tr>
+                        <tr><td><label for=firstName>First Name:</label></td><td><input id="firstName" class=name></td></tr>
+                        <tr><td><label for=address>Address:</label></td><td><input id="address" class=name></td></tr>
+                    </table>
+                    <table id="dates" class="form-box">
+                        <tr><td><label>Arrival:</label></td><td><input id="arrival" class=fecha disabled></td></tr>
+                        <tr><td><label>Nights:</label></td><td><input type=number class=smallnumber></td></tr>
+                        <tr><td><label>Departure:</label></td><td><input id="departure" class=fecha></td></tr>
+                        <tr><td><label>Adults:</label></td><td><input type=number class=smallnumber value="1"></td></tr>
+                        <tr><td><label>Children:</label></td><td><input type=number class=smallnumber></td></tr>
+                    </table>
+
+                    <table id="preferences" class="form-box">
+                        <tr><td></td><td><label>Preferences</label></td></tr>
+                        <tr><td></td><td><input type="checkbox"><label>Newspaper</label></td></tr>
+                        <tr><td></td><td><input type="checkbox"><label>42" TV</label></td></tr>
+                        <tr><td></td><td><input type="checkbox"><label>Ocean View</label></td></tr>
+                        <tr><td></td><td><input type="checkbox"><label>In-Room Breakfast</label></td></tr>
+                        <tr><td></td><td><input type="checkbox"><label>T1 Line</label></td></tr>
+                    </table>
+                    <table id="room" class="form-box">
+                        <tr valign="top"><td>
+                                <label>Room Type:</label></td><td><select id=roomtype class="abanico">
+                                            <option value=0>BASIC</option>
+                                            <option value=1>STUDIO</option>
+                                            <option value=5>SUITE</option>
+                                            <option value=9>MAGNUM</option>
+                                            <option value=9>VILLA</option>
+                                            <option value=9>PRESIDENT</option></select></td></tr>
+                        <tr><td><label>Room:</label></td><td><input class=smallnumber></td></tr>
+                    </table>
+                    <table id="cc" class="form-box">
+                        <tr valign="top"><td>
+                                <label>CC Type:</label></td><td><select id=cctype class="abanico">
+                                            <option value=0>VISA</option>
+                                            <option value=1>AMERICAN EX.</option>
+                                            <option value=5>MASTERCARD</option></select></td></tr>
+                        <tr><td><label>CC #:</label></td><td><input id=codename class=name></td></tr>
+                        <tr><td><label>Exp Date:</label></td><td><input id=singular class=fecha disabled></td></tr>
+                    </table>
+            </form>
+
+            <div id="buttons" class="popup-buttons">
+                    <button onclick="closePopup();">CANCEL</button>
+                    <button onclick="closePopup();">CHECK-IN</button>
+        </div>
+
+</div> <!-- end popup-->
+</div> <!-- end popup back-->

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "",
+  "sources": [
+    "index.lite.md"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;AAII;;;AAEA;;;;;;AAIA;;;;;;AAII;AACA;;;;;;;;;;AAOA;;AAMc;;AAEA;AAFtB;AAKsB;AAAtB;;;;;;;;;;AAQQ;AACA;AA5BR;;;;AA8BQ;;;;AAGA;AACA;AACA;AACA;;;AAEA;AACA;AACA;AAPR;;;;;;;;;;AAYQ;AACA;AACA;AACA;AAFR;;;;;;;;;AAOQ;;;AAEE;;;;;;AAIF;;;AAEA;AACA;AACA;;;AAEA;;;AAEI;AACA;AACA;;AACA;AACI;AAAhB;;;AAEY;;;AAEA;AACI;AACA;AADhB;;;AAGY;AACI;AACA;;;;AAEA;AACI;AACA;AACA;AAFpB;AAJA;AAbA;;;AAqBQ;AA7BR;AAJA"
+}

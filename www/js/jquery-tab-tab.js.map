@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "jquery-tab-tab.js",
+  "sourceRoot": "",
+  "sources": [
+    "jquery-tab-tab.lite.md"
+  ],
+  "names": [],
+  "mappings": ";;;AACI;;;;AAEI;;;AAEE;;;AAEF;;;;;;AAIA;;;;;;;;;;;AAYA;;;;;;;;;;;;AAOA;AACQ;AAAhB;;;;AAGY;AAAZ;;;;;;;;;AAKQ;;;AAEI;;;;;;;AAMA;;;AAEA;;;AAEA;;;;;AAGA;;AAbZ;;;;;;;;AAkBQ;;;AAEI;;;AAEA;;;;AAGA;;;AAEA;AAPZ;;;AASQ;AA/DR;AAFA;;;AAmEI"
+}
