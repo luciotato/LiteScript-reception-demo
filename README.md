@@ -5,7 +5,7 @@ LiteScript Language Demo
 
 For more info check:
 
-[github.com/luciotato/LiteScript] (href=http://github.com/luciotato/LiteScript)
+[LiteScript] (http://github.com/luciotato/LiteScript)
 
 You must clone this repository and run the server locally:
 
