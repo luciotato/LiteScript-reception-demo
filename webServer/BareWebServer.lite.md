@@ -80,7 +80,7 @@ else, If the request was not handled by the app, we check for static files
 
 ## Bare Server Static resources Helper Functions
 
-### helper function findPath(pathname) // return {exists:boolean, disk_uri:string}
+### helper function findPath(pathname) // returns full disk path to filename
         
         var result
         
@@ -137,7 +137,7 @@ else, If the request was not handled by the app, we check for static files
         
 #### method respondWithFile(file) 
 
-        .writeFileContents file,true
+        .writeFileContents file
         .end
     
 
