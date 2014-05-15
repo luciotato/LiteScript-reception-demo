@@ -80,7 +80,7 @@ else, If the request was not handled by the app, we check for static files
 
 ## Bare Server Static resources Helper Functions
 
-### helper function findPath(pathname) // return {exists:boolean, disk_uri:string}
+### helper function findPath(pathname) // return full path / undefined if not found
         
         var result
         
@@ -119,17 +119,17 @@ else, If the request was not handled by the app, we check for static files
 
 #### method writeFileContents(filename) 
 
-        var result
+        var fullpath
         
         if filename and filename[0] is path.sep
-            result = filename //absolute path
+            fullpath = filename //absolute path
         else
-            if not findPath(filename) into result
+            if not findPath(filename) into fullpath
                 fail with 'file not found: #{filename}'
             
-        .writeHeadersFor path.extname(result) // add headers
+        .writeHeadersFor path.extname(fullpath) // add headers
             
-        var file=fs.readFileSync(result)
+        var file=fs.readFileSync(fullpath)
 
         .write file //send read file
         

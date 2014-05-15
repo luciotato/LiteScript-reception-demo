@@ -1,4 +1,4 @@
-//Compiled by LiteScript compiler v0.6.1, source: /home/ltato/LiteScript-reception-demo/www/js/jquery-tab-tab.lite.md
+//Compiled by LiteScript compiler v0.6.5, source: /home/ltato/LiteScript-reception-demo/www/js/jquery-tab-tab.lite.md
 
    //compiler import jQuery
 
@@ -18,11 +18,13 @@
        section = $this.find('section'), 
        currentTab = undefined, 
        currentSection = undefined, 
-       settings = $.extend({index: 0, saveState: false}, options)
+       settings = $.extend({}, options)
        ;
 
-        //declare on settings
-            //index, saveState
+       //default settings =
+       if(!settings) settings={};
+       if(settings.index===undefined) settings.index=0;
+       if(settings.saveState===undefined) settings.saveState=false;
 
 //##### Initialization
 

@@ -1,4 +1,4 @@
-//Compiled by LiteScript compiler v0.6.1, source: /home/ltato/LiteScript-reception-demo/www/js/index.lite.md
+//Compiled by LiteScript compiler v0.6.5, source: /home/ltato/LiteScript-reception-demo/www/js/index.lite.md
 //This is the client-side main app
 
 //##Jquery declares
@@ -16,10 +16,7 @@
        $('.tabtab').tabTab();
        Abanico.convertAll();
 
-//Create dummy dates for the demo
-
-        //#$("#arrivals tbody tr td:nth-child(3)").each function(inx,elem)
-        //#    $(elem).html new Date().format("%d-%n")
+//Get data from the server
 
        $.ajax({url: "/dataserver?q=select * from arrivals", success: function (data){
                       //set table elements
@@ -30,8 +27,6 @@
                      alert(jqxhr.responseText);
          }});
 
-        //#$("#arrivals tbody tr td:nth-child(4)").each function(inx,elem)
-        //#    $(elem).html new Date().addDays(7+Math.random()*21).format("%d-%n")
 
 //remove touch-click delay (safari/webkit)
 

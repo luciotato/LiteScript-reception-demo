@@ -135,7 +135,7 @@ For the purpouse of the demo, here we return just HTML table contents
                 else self.toISOString() //'i'
                 end 
 
-for each /%./ on the format string, execute a function to replace it 
+for each /%./ on the format string, execute replaceDateItem() to replace it 
 
         return formatString.replace( /%(.)/g, replaceDateItem)
 

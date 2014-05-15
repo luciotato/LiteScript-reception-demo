@@ -16,13 +16,11 @@
 			section = $this.find('section')
 			currentTab
 			currentSection
-			settings = $.extend({
-							index: 0,
-							saveState: false,
-						},options)
+			settings = $.extend({},options)
 
-		declare on settings
-			index, saveState
+		default settings =
+			index : 0
+			saveState : false
 
 ##### Initialization
 
