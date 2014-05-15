@@ -137,7 +137,7 @@ else, If the request was not handled by the app, we check for static files
         
 #### method respondWithFile(file) 
 
-        .writeFileContents file,true
+        .writeFileContents file
         .end
     
 
