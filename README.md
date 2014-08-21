@@ -28,7 +28,7 @@ To alter and recompile:
 
  Browser App:
 
-    cd cd source/browser
+    cd source/browser
     . build-lite.sh
 
 
