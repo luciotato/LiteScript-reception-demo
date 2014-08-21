@@ -4,9 +4,7 @@ Barebones minimal node web server
 Dependencies
 ------------
     
-    global import path, fs, url, http
-
-    compiler import nodeHttp
+    import path, fs, url, http
 
 Module Vars
 -----------

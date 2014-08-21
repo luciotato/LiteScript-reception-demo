@@ -1,5 +1,5 @@
 
-	compiler import jQuery
+	global declare jQuery
 
 ### Append to class jQuery
 
@@ -37,11 +37,9 @@ load state
 
 		helper function setCurrent(index) 
 
-			index = case 
-				when index >= a.length then a.length - 1
-				when index < 0 then 0
-				else index
-				end
+			case 
+				when index >= a.length: index = a.length - 1
+				when index < 0: index = 0
 
 			$this.find('.current').removeClass 'current'
 

@@ -1,10 +1,7 @@
 ## Partial DOM Interface
 Window, Document, Element, Node, Event, XMLHttpRequest, CSSStyle
     
-    global declare alert:function
-
-    public var window:Window
-    public var document:Document
+    public function alert(message)
 
     public namespace localStorage
         properties
@@ -201,7 +198,13 @@ Window, Document, Element, Node, Event, XMLHttpRequest, CSSStyle
         method webkitExitFullscreen() 
         method webkitExitPointerLock() 
 
-    public class NodeList
+
+## global scope 
+
+    public var window, document
+
+
+### public class NodeList
         properties
             length
 
@@ -210,23 +213,23 @@ Window, Document, Element, Node, Event, XMLHttpRequest, CSSStyle
         constructor new Node () 
         
         properties
-            baseURI
-            childNodes
+            ownerDocument:Document
+            parentNode:Node
+            parentElement:object
+            nodeName:string
+            nodeType:number
+            nodeValue
+            childNodes: array
             firstChild:Node
             lastChild:Node
-            localName
-            namespaceURI
             nextSibling:Node
-            nodeName:string
+            previousSibling:object
+            baseURI:string
+            textContent:string
+            localName:string
+            namespaceURI:string
+            prefix:string
             nodePrincipal
-            nodeType
-            nodeValue
-            ownerDocument
-            parentElement
-            parentNode:Node
-            prefix
-            previousSibling
-            textContent
 
         method appendChild() 
         method cloneNode() 
@@ -250,13 +253,11 @@ Window, Document, Element, Node, Event, XMLHttpRequest, CSSStyle
         
         properties
 
+            children:array
             accessKey:string
             align:string
             attributes:array
-            baseURI:string
             childElementCount:number
-            childNodes: array
-            children:array
             classList:array
             className:string
             clientHeight:number
@@ -267,7 +268,6 @@ Window, Document, Element, Node, Event, XMLHttpRequest, CSSStyle
             dataset:object
             dir:string
             draggable:boolean
-            firstChild:object
             firstElementChild:object
             hidden:boolean
             id:string
@@ -275,15 +275,8 @@ Window, Document, Element, Node, Event, XMLHttpRequest, CSSStyle
             innerText:string
             isContentEditable:boolean
             lang:string
-            lastChild:object
             lastElementChild:object
-            localName:string
-            namespaceURI:string
             nextElementSibling:object
-            nextSibling:object
-            nodeName:string
-            nodeType:number
-            nodeValue:object
             offsetHeight:number
             offsetLeft:number
             offsetParent:object
@@ -359,12 +352,7 @@ Window, Document, Element, Node, Event, XMLHttpRequest, CSSStyle
             onwheel:object
             outerHTML:string
             outerText:string
-            ownerDocument:Document
-            parentElement:object
-            parentNode:object
-            prefix:object
             previousElementSibling:object
-            previousSibling:object
             scrollHeight:number
             scrollLeft:number
             scrollTop:number
@@ -373,7 +361,6 @@ Window, Document, Element, Node, Event, XMLHttpRequest, CSSStyle
             style:CSSStyle
             tabIndex:number
             tagName:string
-            textContent:string
             title:string
             translate:boolean
             webkitdropzone:string

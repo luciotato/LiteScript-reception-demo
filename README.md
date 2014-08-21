@@ -22,14 +22,14 @@ To alter and recompile:
  
  Bare WebServer:
 
-    cd webServer
-    ./build.sh
+    cd source/server
+    . build-lite.sh
 
 
  Browser App:
 
-    cd www/js
-    ./build.sh
+    cd cd source/browser
+    . build-lite.sh
 
 
 

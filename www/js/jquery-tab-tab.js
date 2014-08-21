@@ -1,88 +1,146 @@
-//Compiled by LiteScript compiler v0.6.5, source: /home/ltato/LiteScript-reception-demo/www/js/jquery-tab-tab.lite.md
+// -----------
+// Module Init
+// -----------
 
-   //compiler import jQuery
+    //    append to class jQuery
+    
 
-   //append to class jQuery
-
-    //method tabTab(options)
-    jQuery.prototype.tabTab = function(options){
+     //     method tabTab(options)
+     // ---------------------------
+     jQuery.prototype.tabTab = function(options){
 
         //declare this:jQuery
+        
 
 //##### Variables
 
-       var 
-       $this = $(this), 
-       ul = $this.find('nav ul'), 
-       a = ul.find('li a'), 
-       section = $this.find('section'), 
-       currentTab = undefined, 
-       currentSection = undefined, 
-       settings = $.extend({}, options)
-       ;
+        //var
+            //$this:jQuery = $(this)
+            //ul = $this.find('nav ul')
+            //a = ul.find('li a')
+            //section = $this.find('section')
+            //currentTab
+            //currentSection
+            //settings = $.extend({},options)
 
-       //default settings =
-       if(!settings) settings={};
-       if(settings.index===undefined) settings.index=0;
-       if(settings.saveState===undefined) settings.saveState=false;
+        //default settings =
+        var 
+            $this = $(this)
+            , ul = $this.find('nav ul')
+            , a = ul.find('li a')
+            , section = $this.find('section')
+            , currentTab = undefined
+            , currentSection = undefined
+            , settings = $.extend({}, options)
+        ;
+
+        //default settings =
+            //index : 0
+            //saveState : false
 
 //##### Initialization
 
 //load state
 
-       //if settings.saveState and localStorage.getItem('index.tabtab') into var stored
-       var stored=undefined;
-       if (settings.saveState && (stored=localStorage.getItem('index.tabtab'))) {
-               setCurrent(stored);
-       }
-       
-       else {
+        //if settings.saveState and localStorage.getItem('index.tabtab') into var stored
+        if(!settings) settings={};
+        if(settings.index===undefined) settings.index=0;
+        if(settings.saveState===undefined) settings.saveState=false;
+
+//##### Initialization
+
+//load state
+
+        //if settings.saveState and localStorage.getItem('index.tabtab') into var stored
+        var stored=undefined;
+        if (settings.saveState && (stored=localStorage.getItem('index.tabtab'))) {
+        
+                //setCurrent stored
+                setCurrent(stored);
+        }
+        //if settings.saveState and localStorage.getItem('index.tabtab') into var stored
+        
+        else {
             // default index
-           setCurrent(settings.index);
-       };
+            //setCurrent settings.index
+            setCurrent(settings.index);
+        };
 
 
 //##### internal functions
 
-       //helper function setCurrent(index)
-       function setCurrent(index){
+        //helper function setCurrent(index)
+        // ---------------------------
+        function setCurrent(index){
 
-           index = //when index >= a.length then a.length - 1
-               (index >= a.length) ? (a.length - 1) :
-                //when index < 0 then 0
-               (index < 0) ? (0) :
-           /* else */ index;
+            //case
+            
+                //when index >= a.length: index = a.length - 1
+            if (
+                (index >= a.length)
+            ){index = a.length - 1
+            }
+                //when index < 0: index = 0
+            else if (
+                (index < 0)
+            ){index = 0
+            };
 
-           $this.find('.current').removeClass('current');
+            //$this.find('.current').removeClass 'current'
+            $this.find('.current').removeClass('current');
 
-           currentTab = a.eq(index).addClass('current');
+            //currentTab = a.eq(index).addClass('current')
+            currentTab = a.eq(index).addClass('current');
 
-           currentSection = section.eq(index).addClass('current');
+            //currentSection = section.eq(index).addClass('current')
+            currentSection = section.eq(index).addClass('current');
 
             //save state
-           //if settings.saveState, localStorage.setItem 'index.tabtab',index
-           if (settings.saveState) {
-               localStorage.setItem('index.tabtab', index)};
-       };
+            //if settings.saveState, localStorage.setItem 'index.tabtab',index
+            if (settings.saveState) {localStorage.setItem('index.tabtab', index)};
+        };
 
 
 //##### Events
 
-       ul.delegate('li a', 'click', function (){
+        //ul.delegate 'li a','click', function
 
-           var $me = $(this);
+            //var $me:jQuery = $(this)
 
-           setCurrent($me.index('li a'));
+            //setCurrent $me.index('li a')
 
             // manually trigger blur for Firefox, Opera and maybe others
-           $me.trigger('blur');
+            //$me.trigger 'blur'
 
-           return false;
-       });
+            //return false
 
-       return this;
-    };
+        //return this
+        ul.delegate('li a', 'click', // ---------------------------
+        function (){
 
-   //end method tabTab
-   
-//# sourceMappingURL=jquery-tab-tab.js.map
+            //var $me:jQuery = $(this)
+            var $me = $(this);
+
+            //setCurrent $me.index('li a')
+            setCurrent($me.index('li a'));
+
+            // manually trigger blur for Firefox, Opera and maybe others
+            //$me.trigger 'blur'
+            $me.trigger('blur');
+
+            //return false
+            return false;
+        });
+
+        //return this
+        return this;
+     };
+// -----------
+// Module code
+// -----------
+    //global declare jQuery
+    
+
+    //end method tabTab
+    
+// end of module

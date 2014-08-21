@@ -1,10 +1,11 @@
 This is the client-side main app
 
-##Jquery declares 
+##global declare 
+js modules included in the global space with <script> tags
 
-    compiler import Document, jQuery, tabTab from 'jquery-tab-tab'
+    global declare DOM, jQuery, tabTab from 'jquery-tab-tab'
 
-    compiler import Abanico 
+    global declare Abanico 
 
 ## on document ready
 
@@ -21,14 +22,14 @@ Get data from the server
 
           url:"/dataserver?q=select * from arrivals"
 
-          success: function (data)
-                      //set table elements
-                      $("#arrivals tbody").html data
-                      //on click, show popup
-                      $("#arrivals tbody tr").noClickDelay().click arrivalPopup
+          success: -> data
+                  //set table elements
+                  $("#arrivals tbody").html data
+                  //on click, show popup
+                  $("#arrivals tbody tr").noClickDelay().click arrivalPopup
 
-          error: function(jqxhr,textStatus,errorThrown)
-                      alert jqxhr.responseText
+          error: -> jqxhr, textStatus, errorThrown
+                  alert jqxhr.responseText
         })
 
 
@@ -50,9 +51,7 @@ on click, show popup. this=TR
         $("#popup").removeClass "hidden"
 
 
-
-
-### helper function closePopup
+### helper function close_popup
         $("#obscure-background").addClass "hidden"
         $("#popup").addClass "hidden"
         $("#reservation").addClass "hidden"

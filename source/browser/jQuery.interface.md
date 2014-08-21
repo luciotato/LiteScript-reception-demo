@@ -1,6 +1,4 @@
 
-    public var $:jQuery
-
     public class jQuery 
         constructor ( selector, context ) 
         method init ( selector, context, rootjQuery ) 
@@ -16,16 +14,12 @@
         method addBack( selector ) 
         method addClass( value ) 
         method after() 
-        method ajax( url, options ) 
         method ajaxComplete( fn )
         method ajaxError( fn )
-        method ajaxPrefilter( dataTypeExpression, func ) 
         method ajaxSend( fn )
-        method ajaxSetup( target, settings ) 
         method ajaxStart( fn )
         method ajaxStop( fn )
         method ajaxSuccess( fn )
-        method ajaxTransport( dataTypeExpression, func ) 
         method andSelf( selector ) 
         method animate( prop, speed, easing, callback ) 
         method Animation( elem, properties, options ) 
@@ -36,7 +30,6 @@
         method bind( types, data, fn ) 
         method blur( data, fn ) 
         method buildFragment( elems, context, scripts, selection ) 
-        method Callbacks( options ) 
         method camelCase( string ) 
         method change( data, fn ) 
         method children( until, selector ) 
@@ -45,25 +38,20 @@
         method click( data, fn ) 
         method clone( elem, dataAndEvents, deepDataAndEvents ) 
         method closest( selectors, context ) 
-        method contains( context, elem ) 
         method contents( until, selector ) 
         method contextmenu( data, fn ) 
         method css( elem, name, extra, styles ) 
-        method data( elem, name, data ) 
         method dblclick( data, fn ) 
-        method Deferred( func ) 
         method delay( time, type ) 
         method delegate( selector, types, data, fn ) 
         method dequeue( type ) 
         method detach( selector ) 
         method dir( elem, dir, until ) 
         method domManip( args, table, callback ) 
-        method each( obj, callback, args ) 
         method empty() 
         method end() 
         method eq( i ) 
         method error( data, fn ) 
-        method extend() 
         method fadeIn( speed, easing, callback ) 
         method fadeOut( speed, easing, callback ) 
         method fadeTo( speed, to, easing, callback ) 
@@ -77,8 +65,6 @@
         method focusout( data, fn ) 
         method fx( elem, options, prop, end, easing, unit ) 
         method get( num ) 
-        method getJSON( url, data, callback ) 
-        method getScript( url, callback ) 
         method globalEval( data ) 
         method grep( elems, callback, inv ) 
         method has( target ) 
@@ -133,7 +119,6 @@
         method one( types, selector, data, fn ) 
         method outerHeight( margin, value ) 
         method outerWidth( margin, value ) 
-        method param( a, traditional ) 
         method parent( until, selector ) 
         method parents( until, selector ) 
         method parentsUntil( until, selector ) 
@@ -141,7 +126,6 @@
         method parseJSON( data ) 
         method parseXML( data ) 
         method position() 
-        method post( url, data, callback, type ) 
         method prepend() 
         method prependTo( selector ) 
         method prev( until, selector ) 
@@ -199,15 +183,38 @@
         method unload( data, fn ) 
         method unwrap() 
         method val( value ) 
-        method when( subordinate /* , ..., subordinateN */ ) 
         method width( margin, value ) 
         method wrap( html ) 
         method wrapAll( html ) 
         method wrapInner( html ) 
 
+
     append to namespace jQuery
+
         properties 
-            fn:jQuery
+            fn = jQuery.prototype //alias
+
+        method ajax( url, options ) 
+        method ajaxSetup( target, settings ) 
+        method ajaxPrefilter( dataTypeExpression, func ) 
+        method ajaxTransport( dataTypeExpression, func ) 
+
+        method each( obj, callback, args ) 
+        method data( elem, name, data ) 
+        method contains( context, elem ) 
+        method extend 
+        method param( a, traditional ) 
+
+        method Callbacks( options ) 
+        method Deferred( func ) 
+
+        method get() // Load data from the server using a HTTP GET request.
+        method getJSON( url, data, callback ) 
+        method getScript( url, callback ) 
+        method post( url, data, callback, type ) 
+
+        method when( subordinate /* , ..., subordinateN */ ) 
+
         class Event
             constructor new Event ( src, props ) 
             method isDefaultPrevented() 
@@ -219,6 +226,8 @@
 
 
     public class jqXHR
+
+        declare name affinity jqxhr
 
         properties
 
@@ -248,4 +257,6 @@
         method send() 
         method setRequestHeader() 
     
+
+    public var $ = jQuery //alias
 

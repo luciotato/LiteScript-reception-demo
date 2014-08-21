@@ -3,8 +3,11 @@
     public var Abanico
 
     append to namespace Abanico
-        properties list:Array
-        properties elemEvents:String
+    
+        properties 
+            list:Array
+            elemEvents:String
+
         method convertAll
         method open(sel)
         method getInstance(sel)

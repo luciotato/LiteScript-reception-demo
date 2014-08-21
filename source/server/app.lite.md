@@ -5,7 +5,7 @@ This is the main app file.
 Module dependencies
 ------------
 
-    global import path, fs, http, url
+    import path, fs, http, url
     
     import BareWebServer
 
@@ -57,9 +57,9 @@ For the purpouse of the demo, here we return just HTML table contents
             
             var today = new Date
 
-            switch result[1] #table
+            case result[1] #table
 
-                case 'arrivals':
+                when 'arrivals':
 
                     var data = [
                             "Magno,Alexander,2,0,MAGNUM,1010,Ocean View|Penthouse|New York Post"
@@ -84,7 +84,7 @@ For the purpouse of the demo, here we return just HTML table contents
                     response.end resultHTML
 
 
-                case 'in-house', 'inhouse':
+                when 'in-house', 'inhouse':
 
                     response.end """
                         <tr><td> DaVinci </td><td>Leonardo</td><td>20-sep</td><td>29-Sep</td><td>1</td><td>0</td><td>BASIC</td><td>1120</td><td>$2300</td><td>DUE OUT</td></tr>
@@ -93,7 +93,7 @@ For the purpouse of the demo, here we return just HTML table contents
                         <tr><td> Sawyer  </td><td>Tom    </td><td>30-Sep </td><td>10-Oct </td><td>1  </td><td>0  </td><td>VILLA  </td><td>2018   </td><td>$600   </td><td>CHECKED IN</td></tr>
                     """                     
 
-                default
+                else
 
                     response.error(500, 'invalid query "#{JSON.stringify(result)}"') //answer with  error
 
@@ -123,17 +123,17 @@ For the purpouse of the demo, here we return just HTML table contents
             return ("0"+number).substr(-2,2)
 
         helper function replaceDateItem(m, key) 
-            return case key 
-                when 'd' then zeroPad(self.getDate())
-                when 'm' then zeroPad(self.getMonth()+1)
-                when 'n' then Date.monthNames[self.getMonth()]
-                when 'w' then Date.dayNames[self.getDay()]
-                when 'y' then self.getFullYear()
-                when 'H' then zeroPad(self.getHours())
-                when 'M' then zeroPad(self.getMinutes())
-                when 'S' then zeroPad(self.getSeconds())
-                else self.toISOString() //'i'
-                end 
+            case key 
+                when 'd':return zeroPad(self.getDate())
+                when 'm':return zeroPad(self.getMonth()+1)
+                when 'n':return Date.monthNames[self.getMonth()]
+                when 'w':return Date.dayNames[self.getDay()]
+                when 'y':return self.getFullYear()
+                when 'H':return zeroPad(self.getHours())
+                when 'M':return zeroPad(self.getMinutes())
+                when 'S':return zeroPad(self.getSeconds())
+                else 
+                    self.toISOString() //'i'
 
 for each /%./ on the format string, execute replaceDateItem() to replace it 
 
