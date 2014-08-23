@@ -3,7 +3,7 @@ This is the client-side main app
 ##global declare 
 js modules included in the global space with <script> tags
 
-    global declare DOM, jQuery, tabTab from 'jquery-tab-tab'
+    global declare jQuery, tabTab from 'jquery-tab-tab'
 
     global declare Abanico 
 

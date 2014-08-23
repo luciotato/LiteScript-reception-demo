@@ -9,7 +9,7 @@ For more info check:
 
 You must clone this repository and run the server locally:
 
-    git clone https://github.com/luciotato/LiteScript-reception-demo.git
+    git clone https://github.com/luciotato/LiteScript-reception-demo.git LiteScript-reception-demo
     cd LiteScript-reception-demo/webServer
     node app
 
@@ -20,16 +20,21 @@ To alter and recompile:
 
     sudo npm install -g litescript
  
- Bare WebServer:
-
-    cd source/server
-    . build-lite.sh
-
-
  Browser App:
 
-    cd source/browser
+    cd www/source
     . build-lite.sh
 
 
+ Bare WebServer:
+
+    cd webServer/source
+    . build-lite.sh
+
+ Launch server
+
+    cd webServer
+    node app
+
+Then navigate to localhost:8000
 

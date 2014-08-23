@@ -1,7 +1,7 @@
 
 	global declare jQuery
 
-### Append to class jQuery
+### Append to namespace jQuery.fn
 
 #### method tabTab(options)
 
